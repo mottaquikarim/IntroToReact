@@ -1,0 +1,4 @@
+app/book/*
+node_modules/*
+*/.DS_STORE/*
+*/**/.DS_STORE/*

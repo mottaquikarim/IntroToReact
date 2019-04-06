@@ -1,0 +1,22 @@
+# https://github.com/rust-lang-nursery/mdBook/blob/master/book-example/src/continuous-integration.md
+language: rust
+sudo: false
+cache:
+  - cargo
+rust:
+  - stable
+env:
+  global:
+    - HOME=$HOME
+before_script:
+  - make install
+script:
+  - make build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: app/book
+  keep-history: false
+  on:
+    branch: master
