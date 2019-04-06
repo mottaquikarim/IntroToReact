@@ -1,5 +1,5 @@
 <!---
-{"next":"about.md","title":"Tic Tac Toe"}
+{"next":"Notes/README.md","title":"Tic Tac Toe"}
 -->
 
 # [Tic Tac Toe](https://codesandbox.io/s/new)

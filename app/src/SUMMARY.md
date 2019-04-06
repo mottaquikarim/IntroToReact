@@ -9,4 +9,6 @@
 	- [Basic Terminology](Topics/basics.md)
 	- [Shopping List](Topics/shopping_list.md)
 	- [Tic Tac Toe](Topics/tictactoe.md)
+- [Notes for April 6 2019](Notes/README.md)
+	- [Notes for April 6 2019](Notes/April62019.md)
 - [About](about.md)
