@@ -2,7 +2,7 @@
 
 <img src="assets/react.png?raw=true" width="128px"/>
 
-# [Intro To React](https://mottaquikarim.github.io/Intro To React)
+# [Intro To React](https://mottaquikarim.github.io/IntroToReact)
 
 *🎉🎈🎂🍾🎊🍻💃*
 
