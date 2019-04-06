@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/mottaquikarim/IntroToReact.svg?branch=master)](https://travis-ci.org/mottaquikarim/IntroToReact)
 
-![icon](assets/react.svg?raw=true)
+![icon](assets/react.png?raw=true)
 # [Intro To React](https://mottaquikarim.github.io/Intro To React)
 
 *🎉🎈🎂🍾🎊🍻💃*
