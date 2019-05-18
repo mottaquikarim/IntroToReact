@@ -25,6 +25,7 @@ A state is similar to a prop, except that **it is component specific**. This mea
 **EXAMPLE**: If we have a react component that represents a user profile, the **prop** would be the API call that returns user data from the server. However, as the user is updating fields - we represent these changes in the **state** (as they can be abandoned at any time) - and once user performs an action such as **SUBMIT**, etc we post this data back to the DB so that the prop when user revisits profile is up to date.
 
 ## [Lifecycle](https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282)
+[![chart](https://cdn-images-1.medium.com/max/1600/1*u8hTumGAPQMYZIvfgQMfPA.jpeg)](https://levelup.gitconnected.com/componentdidmakesense-react-lifecycle-explanation-393dcb19e459)
 
 All react components encompass a concept of the component "lifecycle". Every time a prop or state is updated, the component lifecycle is triggered.
 
