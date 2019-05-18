@@ -1,0 +1,472 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Intro To React</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li><a href="index.html"><strong aria-hidden="true">1.</strong> Guten Tag!</a></li><li><a href="Intro/index.html"><strong aria-hidden="true">2.</strong> Getting Started</a></li><li><ol class="section"><li><a href="Intro/simplest.html"><strong aria-hidden="true">2.1.</strong> Basic HTML</a></li><li><a href="Intro/codesandbox.html"><strong aria-hidden="true">2.2.</strong> Online Environments</a></li><li><a href="Intro/local.html"><strong aria-hidden="true">2.3.</strong> Local Environment</a></li></ol></li><li><a href="Topics/index.html"><strong aria-hidden="true">3.</strong> Topics</a></li><li><ol class="section"><li><a href="Topics/basics.html"><strong aria-hidden="true">3.1.</strong> Basic Terminology</a></li><li><a href="Topics/shopping_list.html"><strong aria-hidden="true">3.2.</strong> Shopping List</a></li><li><a href="Topics/tictactoe.html"><strong aria-hidden="true">3.3.</strong> Tic Tac Toe</a></li></ol></li><li><a href="Notes/index.html"><strong aria-hidden="true">4.</strong> Notes for April 6 2019</a></li><li><ol class="section"><li><a href="Notes/April62019.html"><strong aria-hidden="true">4.1.</strong> Notes for April 6 2019</a></li></ol></li><li><a href="about.html"><strong aria-hidden="true">5.</strong> About</a></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Intro To React</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!---
+{"next":"Intro/README.md","title":"Guten Tag!","first":true}
+-->
+<a class="header" href="#intro-to-react" id="intro-to-react"><h1>Intro To React</h1></a>
+<p><em>🎉🎈🎂🍾🎊🍻💃</em></p>
+<p><em>A hands on and practical introduction
+to React development.</em></p>
+<p>React is a declarative, efficient, and flexible JavaScript library for building user interfaces. With React, we are able to compose complex UIs from small and isolated blocks of code called &quot;Components&quot;. A component is the equivalent of a jquery-ui style HTML &quot;widget&quot; that encompasses both functionality and aesthetic styling. Furthermore, a component is typically defined by a data scheme - usually stored as a &quot;state&quot; variable or passed along as a &quot;prop&quot; from another component. React is &quot;declarative&quot; in that we tell it what to do and worry less about &quot;how&quot; to do it.</p>
+<!---
+{"next":"Intro/simplest.md","title":"Getting Started"}
+-->
+<a class="header" href="#getting-started" id="getting-started"><h1>Getting Started</h1></a>
+<p>Before we begin, let us explore some class tools and resources that we will be leveraging as we traverse this course. There are a few ways to install and run React - in the next few sections we will be exploring them along with details as to how to get set up with each approach.</p>
+<!---
+{"next":"Intro/codesandbox.md","title":"Basic HTML"}
+-->
+<a class="header" href="#basic-html" id="basic-html"><h1>Basic HTML</h1></a>
+<p>The simplest approach is to create an <code>index.html</code> page that contains a react development build.</p>
+<p>You can copy and paste the following into a simple HTML page:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
+    &lt;script src=&quot;https://unpkg.com/react@16/umd/react.development.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://unpkg.com/react-dom@16/umd/react-dom.development.js&quot;&gt;&lt;/script&gt;
+    
+    &lt;script src=&quot;https://unpkg.com/babel-standalone@6.15.0/babel.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
+    &lt;script type=&quot;text/babel&quot;&gt;
+
+      ReactDOM.render(
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;,
+        document.getElementById('root')
+      );
+
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Just copy-pasta this code into your favorite code editor, save as <code>index.html</code> and then open up the browser and point it to your file! React will run locally!</p>
+<a class="header" href="#important-notes" id="important-notes"><h2>Important Notes</h2></a>
+<ul>
+<li>This is NOT suitable for use in production</li>
+<li>The react resource being imported is a large development build of React</li>
+<li>Babel transform is occuring in the browser, which is very slow</li>
+</ul>
+<!---
+{"next":"Intro/local.md","title":"Online Environments"}
+-->
+<a class="header" href="#online-environments" id="online-environments"><h1>Online Environments</h1></a>
+<p>There are a lot of tools available that allow us to write react code inside the browser. Using these tools, we can write react code that more closely resembles production code.</p>
+<a class="header" href="#a-hrefhttpscodesandboxiosnewcodesandboxa" id="a-hrefhttpscodesandboxiosnewcodesandboxa"><h2><a href="https://codesandbox.io/s/new">Codesandbox</a></h2></a>
+<p>Codesandbox is nice in that it allows us to create a &quot;virtual&quot; filesystem and write code as if React's build dependencies are already pre-installed.</p>
+<p>This tool is free and ready to use from the get-go and therefore is highly recommended for usage in building small react apps to understand the underlying principles governing this framework.</p>
+<!---
+{"next":"about.md","title":"Local Environment"}
+-->
+<a class="header" href="#local-environment" id="local-environment"><h1>Local Environment</h1></a>
+<p>Because React performs many code transformations, it is imperative that our local environments have NodeJS and a few other packages preinstalled (babel, webpack, etc).</p>
+<p>Assuming these packages are pre-installed, we can create our own custom task runners that will analyze our React code, transform it and &quot;build&quot; it. However, it easy enough to utilize <strong><a href="https://github.com/facebook/create-react-app">Create React App</a></strong> to do the grunt work of pre-installing all the task runners for us.</p>
+<p>Using <code>create-react-app</code>, we are able to do everything codesandbox allows us to do, but in our local machines. </p>
+<!---
+{"next":"Topics/basics.md","title":"Topics"}
+-->
+<a class="header" href="#topics" id="topics"><h1>Topics</h1></a>
+<p>Let's learn React by doing. In particular, we will build a few simple apps to explore how React and React components work.</p>
+<!---
+{"next":"Topics/shopping_list.md","title":"Basic Terminology"}
+-->
+<a class="header" href="#basic-terminology" id="basic-terminology"><h1>Basic Terminology</h1></a>
+<p>Here are some of the basic vocabulary words we will leverage to get started:</p>
+<a class="header" href="#data" id="data"><h2>Data</h2></a>
+<p>An entity that represents what we <em>want</em> to display on the screen. <strong>DATA</strong> is the heart of any react application as it is the <em>source of truth</em> that drives all other interactions and views.</p>
+<a class="header" href="#component" id="component"><h2>Component</h2></a>
+<p>A bit of code - either a class or a function - that knows how to interpret a piece of data and render interactable elements on screen. A component encompasses the logic that defines HOW to <strong>display</strong> and <strong>mutate</strong> the data of your application</p>
+<a class="header" href="#props" id="props"><h2>Props</h2></a>
+<p>A prop, short for &quot;property&quot;, defines how we can pass data along into our components. This is the primary / preferred way to tell the component <em>what</em> the data is that we are attempting to display.</p>
+<a class="header" href="#state" id="state"><h2>State</h2></a>
+<p>A state is similar to a prop, except that <strong>it is component specific</strong>. This means that each component has the ability to maintain internal state.</p>
+<p><strong>EXAMPLE</strong>: If we have a react component that represents a user profile, the <strong>prop</strong> would be the API call that returns user data from the server. However, as the user is updating fields - we represent these changes in the <strong>state</strong> (as they can be abandoned at any time) - and once user performs an action such as <strong>SUBMIT</strong>, etc we post this data back to the DB so that the prop when user revisits profile is up to date.</p>
+<a class="header" href="#a-hrefhttpsblogbitsrcioreact-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282lifecyclea" id="a-hrefhttpsblogbitsrcioreact-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282lifecyclea"><h2><a href="https://blog.bitsrc.io/react-16-lifecycle-methods-how-and-when-to-use-them-f4ad31fb2282">Lifecycle</a></h2></a>
+<p><a href="https://levelup.gitconnected.com/componentdidmakesense-react-lifecycle-explanation-393dcb19e459"><img src="https://cdn-images-1.medium.com/max/1600/1*u8hTumGAPQMYZIvfgQMfPA.jpeg" alt="chart" /></a></p>
+<p>All react components encompass a concept of the component &quot;lifecycle&quot;. Every time a prop or state is updated, the component lifecycle is triggered.</p>
+<!---
+{"next":"Topics/tictactoe.md","title":"Shopping List"}
+-->
+<a class="header" href="#a-hrefhttpscodesandboxiosnewshopping-lista" id="a-hrefhttpscodesandboxiosnewshopping-lista"><h1><a href="https://codesandbox.io/s/new">Shopping List</a></h1></a>
+<p>Let's implement a shopping list as follows:</p>
+<ol>
+<li>It includes two fields - one for name of item and one for price</li>
+<li>On adding new item, it updates the total and the total with tax</li>
+<li>We are able to also remove and/or edit items as we see fit.</li>
+</ol>
+<!---
+{"next":"Notes/README.md","title":"Tic Tac Toe"}
+-->
+<a class="header" href="#a-hrefhttpscodesandboxiosnewtic-tac-toea" id="a-hrefhttpscodesandboxiosnewtic-tac-toea"><h1><a href="https://codesandbox.io/s/new">Tic Tac Toe</a></h1></a>
+<p>Let's implement a tic-tac-toe game as follows:</p>
+<ol>
+<li>Supports two players who alternate turns</li>
+<li>Can detect if someone has won and stop game</li>
+<li>We can &quot;track&quot; every move made and &quot;time travel&quot; through the game once completed</li>
+</ol>
+<!---
+{"next":"Notes/April62019.md","title":"Notes for April 6 2019"}
+-->
+<a class="header" href="#notes" id="notes"><h1>Notes</h1></a>
+<p>Please find class notes here.</p>
+<!---
+{"next":"Notes/May182019.md","title":"Notes for April 6 2019"}
+-->
+<a class="header" href="#a-hrefhttpscodesandboxios240o4vlw1jnotes-for-april-6-2019a" id="a-hrefhttpscodesandboxios240o4vlw1jnotes-for-april-6-2019a"><h1><a href="https://codesandbox.io/s/240o4vlw1j">Notes for April 6 2019</a></h1></a>
+<pre><code class="language-javascript">import React from &quot;react&quot;;
+import ReactDOM from &quot;react-dom&quot;;
+
+import &quot;./styles.css&quot;;
+
+const ShoppingListItem = props =&gt; {
+  const label = props.label;
+  const price = props.price.toFixed(2);
+  const quantity = props.quantity;
+
+  const labelStyles = {
+    fontWeight: &quot;bolder&quot;
+  };
+
+  return (
+    &lt;div className=&quot;line-item&quot;&gt;
+      &lt;span
+        style={{
+          paddingRight: &quot;5px&quot;
+        }}
+      &gt;
+        {quantity}
+      &lt;/span&gt;
+      &lt;span style={labelStyles}&gt;{label}&lt;/span&gt;=
+      &lt;span&gt;${(quantity * price).toFixed(2)}&lt;/span&gt;
+    &lt;/div&gt;
+  );
+};
+
+const ShoppingList = props =&gt; {
+  const shoppinglist = props.shoppinglist;
+  console.log(shoppinglist)
+  let total = 0;
+  const ShoppingListItems = [];
+  for (let item of shoppinglist) {
+    console.log(item);
+    total += item.price * item.quantity;
+    ShoppingListItems.push(
+      &lt;ShoppingListItem
+        key={item.label}
+        label={item.label}
+        price={item.price}
+        quantity={item.quantity}
+      /&gt;
+    );
+  }
+
+  return (
+    &lt;div&gt;
+      {ShoppingListItems}
+      TOTAL: ${total}
+    &lt;/div&gt;
+  );
+};
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      label: &quot;&quot;,
+      price: 0,
+      quantity: 0,
+      currentTotal: null,
+      shoppingList: [],
+    };
+  }
+
+  addToList() {
+    const shoppingList = this.state.shoppingList;
+
+    shoppingList.push({
+      &quot;label&quot;: this.state.label,
+      &quot;price&quot;: parseFloat(this.state.price, 10),
+      &quot;quantity&quot;: parseInt(this.state.quantity, 10),
+    })
+ 
+    // make DB call to POST / PUT here
+    this.setState({
+      label: &quot;&quot;,
+      price: 0,
+      quantity: 0,
+      currentTotal: null,
+      shoppingList: shoppingList,
+    })
+  }
+
+  updateState(e, name) {
+    const oldState = this.state;
+    oldState[name] = e.target.value;
+    if (oldState.price &amp;&amp; oldState.quantity) {
+      oldState.currentTotal = oldState.price * oldState.quantity
+    }
+    else {
+      oldState.currentTotal = null;
+    }
+    this.setState(oldState)
+  }
+
+  render() {
+    const inputStyle = {
+      padding: '10px',
+      fontSize: '14px',
+      margin: '5px',
+      display: 'block',
+      width: '100%'
+    }
+
+    const buttonStyle = {
+      width: '100%',
+      border: 'none',
+      fontSize: '14px',
+      fontWeight: 'bolder',
+      backgroundColor: 'black',
+      color: 'white',
+      margin: '5px',
+      padding: '10px',
+    }
+
+    const currentTotal = this.state.currentTotal ? (&quot;$&quot; + this.state.currentTotal): null
+    console.log(this.state.shoppingList)
+    return ( 
+      &lt;div className=&quot;App&quot;&gt;
+        &lt;input style={inputStyle} onChange={(e) =&gt; this.updateState(e, &quot;label&quot;)} type=&quot;text&quot; placeholder=&quot;Shopping Item Label&quot; /&gt;
+        &lt;input style={inputStyle} onChange={(e) =&gt; this.updateState(e, &quot;price&quot;)} type=&quot;number&quot; step=&quot;0.01&quot; placeholder=&quot;Shopping Item Price&quot; /&gt;
+        &lt;input style={inputStyle} onChange={(e) =&gt; this.updateState(e, &quot;quantity&quot;)} type=&quot;number&quot; placeholder=&quot;Shopping Item Quantity&quot; /&gt;
+        &lt;span&gt;{currentTotal}&lt;/span&gt;
+        &lt;button onClick={() =&gt; this.addToList()} style={buttonStyle}&gt;Add!&lt;/button&gt;
+        &lt;ShoppingList shoppinglist={this.state.shoppingList} /&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+// const shoppinglistArr = [
+//   {
+//     label: &quot;Eggs&quot;,
+//     price: 1.99,
+//     quantity: 1
+//   },
+//   {
+//     label: &quot;Coffee&quot;,
+//     price: 8.99,
+//     quantity: 5,
+//   },
+//   {
+//     label: &quot;chicken&quot;,
+//     price: 5.99,
+//     quantity: 10,
+//   }
+// ];
+
+const rootElement = document.getElementById(&quot;root&quot;);
+ReactDOM.render(&lt;App /&gt;, rootElement);
+
+</code></pre>
+<!---
+{"next": "","title": "About"}
+-->
+<a class="header" href="#about" id="about"><h1>About</h1></a>
+<p>Built by your boy <strong><a href="https://taqkarim.dev">Taq Karim</a></strong> with <strong><a href="https://github.com/rust-lang-nursery/mdBook">this</a></strong>, <strong><a href="https://travis-ci.org/">this</a></strong>, ☕☕☕ and ❤️.</p>
+<p><a href="https://travis-ci.org/mottaquikarim/PythonProgramming"><img src="https://travis-ci.org/mottaquikarim/PythonProgramming.svg?branch=master" alt="Build Status" /></a></p>
+<p><em>Find the project source on <strong><a href="https://github.com/mottaquikarim/PythonProgramming">github</a></strong>.</em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
